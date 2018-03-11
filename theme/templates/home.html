@@ -38,7 +38,7 @@
                 <div class="container">
                     <div class="nav-header">
                         <a href="/" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-                    <h1 id="fh5co-logo">{% block title %}{% endblock %}<a href="/"><i class="icon-home2"></i></a></h1>
+                    <h1 id="fh5co-logo">{% block title %}{{ settings.SITE_TITLE }}{% endblock %}<a href="/"><i class="icon-home2"></i></a></h1>
                         <!-- START #fh5co-menu-wrap -->
                         <nav id="fh5co-menu-wrap" role="navigation">
                             <ul class="sf-menu" id="fh5co-primary-menu">
@@ -47,7 +47,7 @@
                                 </li>
                                 <li><a href="work.html">Projects</a></li>
                                 <li>
-                              <li><a href="about.html">About</a></li>
+                              <li><a href="about">About</a></li>
                                 <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </nav>
@@ -59,7 +59,7 @@
         <aside id="fh5co-hero" class="js-fullheight">
             <div class="flexslider js-fullheight">
                 <ul class="slides">
-                <li style="background-image: url({% static "images/slide_1.jpg" %});">
+                <li style="background-image: url({% static "images/stairswithkitchen.jpg" %});">
                     <div class="overlay-gradient"></div>
                     <div class="container">
                         <div class="col-md-5 col-sm-6 col-xs-12 js-fullheight slider-text">
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                 </li>
-                <li style="background-image: url(images/slide_2.jpg);">
+                <li style="background-image: url({% static "images/wetfloorwindow.jpg" %});">
                     <div class="overlay-gradient"></div>
                     <div class="container">
                         <div class="col-md-5 col-sm-6 col-xs-12 js-fullheight slider-text">
@@ -101,10 +101,11 @@
                 </ul>
             </div>
         </aside>
+        {% block content %}
         <div id="fh5co-section">
             <div class="grid-project-section">
                 <a href="#">
-                    <img src="images/project-1.jpg" alt="Project" class="img-responsive">
+                    <img src="{% static "images/project-1.jpg" %}" alt="Project" class="img-responsive">
                     <div class="desc text-center">
                         <h2>Ohio Building</h2>
                     </div>
@@ -127,6 +128,7 @@
                 </a>
             </div>
         </div>
+        {% endblock content %}
         <footer>
             <div id="footer">
                 <div class="container">
@@ -139,6 +141,7 @@
                         <div class="col-md-3">
                             <h3 class="section-title">Our Services</h3>
                             <ul>
+                                {% block services %}
                                 <li><a href="#">Web Design</a></li>
                                 <li><a href="#">Branding &amp; Identity</a></li>
                                 <li><a href="#">Free HTML5</a></li>
@@ -147,6 +150,7 @@
                                 <li><a href="#">Free HTML5 Template</a></li>
                                 <li><a href="#">Free HTML5 &amp; CSS3 Template</a></li>
                                 <li><a href="#">HandCrafted Templates</a></li>
+                                {% endblock %}
                             </ul>
                         </div>
 
