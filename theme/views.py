@@ -5,3 +5,6 @@ class HomePageView(generic.TemplateView):
 
 class AboutPageView(generic.TemplateView):
     template_name = 'pages/about.html'
+
+class ContactPageView(generic.TemplateView):
+    template_name = 'pages/contact.html'

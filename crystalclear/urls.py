@@ -8,7 +8,7 @@ from mezzanine.core.views import direct_to_template
 from mezzanine.conf import settings
 
 from cartridge.shop.views import order_history
-from theme.views import HomePageView, AboutPageView
+from theme.views import HomePageView, AboutPageView, ContactPageView
 
 admin.autodiscover()
 
@@ -35,6 +35,7 @@ urlpatterns += [
 
     url(r'^$', HomePageView.as_view(), name='home'),
     url(r"^about/", AboutPageView.as_view(), name='about'),
+    url(r'^contact/', ContactPageView.as_view(), name='contact'),
     # We don't want to presume how your homepage works, so here are a
     # few patterns you can use to set it up.
 
