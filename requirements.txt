@@ -13,7 +13,7 @@ filebrowser-safe==0.4.7
 future==0.16.0
 grappelli-safe==0.4.7
 html5lib==1.0b10
-httplib2==0.10.3
+httplib2==0.18.0
 idna==2.6
 Mezzanine==4.2.3
 oauthlib==2.0.6
